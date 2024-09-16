@@ -26,3 +26,54 @@ img {
   display: inline;
 }
 /* hacks-guide change end: set display:inline on images */
+
+/* hacks-guide change start: add version selector */
+select {
+  font-weight: bold;
+  font-size: 100%;
+  cursor: pointer;
+  border: 2px solid var(--vp-c-border);
+  background-color: var(--vp-c-bg-soft);
+  padding: .25em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  appearance: auto;
+}
+
+input {
+  font-weight: bold;
+  font-size: 100%;
+  cursor: pointer;
+  border: 2px solid var(--vp-c-border);
+  padding: .25em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  appearance: auto;
+}
+
+input:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.selectversion {
+  text-align: center;
+  border: 1px solid var(--vp-c-divider);
+}
+
+img.tableimage {
+  height: 40%;
+  width: 40%;
+}
+
+table.modeltable {
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+input[type="radio"] {
+  width: 50px;
+  height: 25px;
+  transition: none;
+}
+/* hacks-guide change end: add version selector */
