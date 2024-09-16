@@ -13,3 +13,10 @@
 	display: none;
 }
 /* hacks-guide change end: Disable container titles */
+
+/* hacks-guide change start: Adjust summary margins on detail containers */
+.custom-block.details summary {
+  /* original: 16px 16px 8px */
+  margin: 8px 0 8px;
+}
+/* hacks-guide change end: Adjust summary margins on detail containers */
