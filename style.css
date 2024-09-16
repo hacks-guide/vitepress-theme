@@ -1,0 +1,15 @@
+/*
+  Copyright (C) 2024 Nintendo Homebrew
+  SPDX-License-Identifier: MIT
+*/
+
+/* hacks-guide change start: Disable container titles */
+.custom-block {
+  /* original: 16px 16px 8px */
+  padding: 8px 16px 8px;
+}
+
+.custom-block-title {
+	display: none;
+}
+/* hacks-guide change end: Disable container titles */
