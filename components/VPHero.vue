@@ -165,6 +165,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   font-size: 32px;
   font-weight: 700;
   white-space: pre-wrap;
+  color: rgba(255, 255, 245, 0.86);
 }
 
 .VPHero.has-image .name,
@@ -212,7 +213,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   font-size: 18px;
   font-weight: 500;
   white-space: pre-wrap;
-  color: var(--vp-c-text-2);
+  color: rgba(255, 255, 245, 0.86);
 }
 
 .VPHero.has-image .tagline {
