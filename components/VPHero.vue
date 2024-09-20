@@ -1,14 +1,15 @@
 <!--
   Copyright (c) 2019-2024 Yuxi (Evan) You
+  Copyright (c) 2024 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
 
 <script setup lang="ts">
 import { type Ref, inject } from 'vue'
+import { withBase } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
 import VPButton from 'vitepress/theme'
-import VPImage from 'vitepress/theme'
 
 export interface HeroAction {
   theme?: 'brand' | 'alt'
@@ -30,7 +31,13 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 </script>
 
 <template>
-  <div class="VPHero" :class="{ 'has-image': image || heroImageSlotExists }">
+<!-- hacks-guide change start: Expand hero image across the entire screen -->
+  <div v-if="typeof image === 'string' || 'src' in image"
+    class="hacks-guide-hero-image"
+    v-bind:style="{ 'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + withBase(typeof image === 'string' ? image : image.src) + ')' }"
+  >
+  <div class="VPHero">
+<!-- hacks-guide change end: Expand hero image across the entire screen -->
     <div class="container">
       <div class="main">
         <slot name="home-hero-info-before" />
@@ -59,6 +66,8 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
         <slot name="home-hero-actions-after" />
       </div>
 
+<!-- hacks-guide change start: Expand hero image across the entire screen -->
+<!--
       <div v-if="image || heroImageSlotExists" class="image">
         <div class="image-container">
           <div class="image-bg" />
@@ -67,11 +76,28 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
           </slot>
         </div>
       </div>
+-->
+<!-- hacks-guide change end: Expand hero image across the entire screen -->
+
     </div>
   </div>
+<!-- hacks-guide change start: Expand hero image across the entire screen -->
+  </div>
+<!-- hacks-guide change end: Expand hero image across the entire screen -->
 </template>
 
 <style scoped>
+
+.hacks-guide-hero-image {
+  padding: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px) 24px 48px;
+  position: relative;
+  margin-bottom: 2em;
+  padding: 3em 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .VPHero {
   margin-top: calc((var(--vp-nav-height) + var(--vp-layout-top-height, 0px)) * -1);
   padding: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px) 24px 48px;
