@@ -1,5 +1,6 @@
 <!--
   Copyright (c) 2019-2024 Yuxi (Evan) You
+  Copyright (c) 2024 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
@@ -15,13 +16,34 @@ const { hasSidebar } = useSidebar()
 <template>
   <footer v-if="theme.footer && frontmatter.footer !== false" class="VPFooter" :class="{ 'has-sidebar': hasSidebar }">
     <div class="container">
+<!-- hacks-guide change start: replace message with a list of links -->
+<!--
       <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
+-->
+      <li v-if="theme.footer.items" v-for="(item, index) in theme.footer.items">
+        <ul><a class="message" v-bind:href="item.link">{{ item.text }}</a></ul>
+        <ul v-if="index != theme.footer.items.length - 1"> - </ul>
+      </li>
+<!-- hacks-guide change end: replace message with a list of links -->
       <p v-if="theme.footer.copyright" class="copyright" v-html="theme.footer.copyright"></p>
     </div>
   </footer>
 </template>
 
 <style scoped>
+
+/* hacks-guide change start: replace message with a list of links */
+li {
+  display: inline;
+  list-style-type: none;
+}
+
+ul {
+  display: inline;
+  list-style-type: none;
+}
+/* hacks-guide change end: replace message with a list of links */
+
 .VPFooter {
   position: relative;
   z-index: var(--vp-z-index-footer);
