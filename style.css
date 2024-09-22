@@ -20,3 +20,9 @@
   margin: 8px 0 8px;
 }
 /* hacks-guide change end: Adjust summary margins on detail containers */
+
+/* hacks-guide change start: set display:inline on images */
+img {
+  display: inline;
+}
+/* hacks-guide change end: set display:inline on images */
