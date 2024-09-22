@@ -13,6 +13,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnet } from '@fortawesome/free-solid-svg-icons'
 library.add(faMagnet)
 
+import Tab from './components/Tab.vue'
+import Tabs from './components/Tabs.vue'
+
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
@@ -21,6 +24,8 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    app.component('font-awesome-icon', FontAwesomeIcon)
+    app.component('font-awesome-icon', FontAwesomeIcon),
+    app.component('Tab', Tab),
+    app.component('Tabs', Tabs)
   }
 }
