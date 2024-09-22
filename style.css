@@ -187,3 +187,20 @@ input[type="radio"] {
   }
 }
 /* hacks-guide change end: add tabs */
+
+/* hacks-guide change start: tone down light mode bg */
+:root {
+  --vp-c-bg: #f6f6f6;
+  --vp-c-bg-alt: #ececec;
+  --vp-c-bg-elv: #f6f6f6;
+  --vp-c-bg-soft: #ececec;
+}
+
+.dark {
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+/* hacks-guide change end: tone down light mode bg */
