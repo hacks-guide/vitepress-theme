@@ -34,7 +34,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 <!-- hacks-guide change start: Expand hero image across the entire screen -->
   <div v-if="typeof image === 'string' || 'src' in image"
     class="hacks-guide-hero-image"
-    v-bind:style="{ 'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + withBase(typeof image === 'string' ? image : image.src) + ')' }"
+    v-bind:style="{ 'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5) 50%, var(--vp-c-bg)), url(' + withBase(typeof image === 'string' ? image : image.src) + ')' }"
   >
   <div class="VPHero">
 <!-- hacks-guide change end: Expand hero image across the entire screen -->
