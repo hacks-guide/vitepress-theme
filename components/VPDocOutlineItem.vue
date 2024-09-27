@@ -1,5 +1,6 @@
 <!--
   Copyright (c) 2019-2024 Yuxi (Evan) You
+  Copyright (c) 2024 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
@@ -43,11 +44,16 @@ function onClick({ target: el }: Event) {
 
 .outline-link {
   display: block;
-  line-height: 32px;
+/* hacks-guide change start: wrap long text to newline */
+  line-height: 20px;
+  padding-bottom: 12px;
+/* hacks-guide change end: wrap long text to newline */
   font-size: 14px;
   font-weight: 400;
   color: var(--vp-c-text-2);
-  white-space: nowrap;
+/* hacks-guide change start: wrap long text to newline */
+  /* white-space: nowrap; */
+/* hacks-guide change end: wrap long text to newline */
   overflow: hidden;
   text-overflow: ellipsis;
   transition: color 0.5s;
