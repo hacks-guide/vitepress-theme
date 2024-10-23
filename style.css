@@ -204,3 +204,9 @@ input[type="radio"] {
 }
 
 /* hacks-guide change end: tone down light mode bg */
+
+/* hacks-guide change start: disable transition on homepage navbar */
+.VPNavBar.home {
+  transition: unset
+}
+/* hacks-guide change end: disable transition on homepage navbar */
