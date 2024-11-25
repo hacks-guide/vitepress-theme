@@ -210,3 +210,17 @@ input[type="radio"] {
   transition: unset
 }
 /* hacks-guide change end: disable transition on homepage navbar */
+
+/* hacks-guide change start: add grid cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+
+  .card {
+    padding: 10px;
+    border: 1px solid var(--vp-c-gray-soft);
+  }
+}
+/* hacks-guide change end: add grid cards */
