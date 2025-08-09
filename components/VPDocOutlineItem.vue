@@ -1,15 +1,15 @@
 <!--
-  Copyright (c) 2019-2024 Yuxi (Evan) You
-  Copyright (c) 2024 Nintendo Homebrew
+  Copyright (c) 2019-2025 Yuxi (Evan) You
+  Copyright (c) 2024-2025 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
 
 <script setup lang="ts">
-import type { MenuItem } from 'vitepress/dist/client/theme-default/composables/outline.js'
+import type { DefaultTheme } from 'vitepress/theme'
 
 defineProps<{
-  headers: MenuItem[]
+  headers: DefaultTheme.OutlineItem[]
   root?: boolean
 }>()
 
@@ -23,7 +23,9 @@ function onClick({ target: el }: Event) {
 <template>
   <ul class="VPDocOutlineItem" :class="root ? 'root' : 'nested'">
     <li v-for="{ children, link, title } in headers">
-      <a class="outline-link" :href="link" @click="onClick" :title="title">{{ title }}</a>
+      <a class="outline-link" :href="link" @click="onClick" :title>
+        {{ title }}
+      </a>
       <template v-if="children?.length">
         <VPDocOutlineItem :headers="children" />
       </template>
