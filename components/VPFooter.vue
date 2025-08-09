@@ -1,6 +1,6 @@
 <!--
-  Copyright (c) 2019-2024 Yuxi (Evan) You
-  Copyright (c) 2024 Nintendo Homebrew
+  Copyright (c) 2019-2025 Yuxi (Evan) You
+  Copyright (c) 2024-2025 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
