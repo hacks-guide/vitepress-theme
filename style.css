@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2026 Nintendo Homebrew      *
+ Copyright (C) 2026 Nintendo Homebrew
  Copyright (C) 2026 emiyl
  SPDX-License-Identifier: MIT
  */
@@ -197,7 +197,7 @@ input[type="radio"] {
 
     > .custom-block:last-child {
       margin-top: auto;
-      padding-top: 1rem;
+      padding-top: 0.5rem;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -222,6 +222,32 @@ input[type="radio"] {
       margin: 0.75rem 0;
     }
   }
+}
+
+.card .custom-block h1,
+.card .custom-block h2,
+.card .custom-block h3,
+.card .custom-block h4,
+.card .custom-block h5,
+.card .custom-block h6 {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.card .custom-block-title {
+  display: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.card .custom-block p:first-child,
+.card .custom-block p:first-of-type {
+  margin-top: 0;
+}
+
+.card .custom-block > p {
+  margin-top: 0;
 }
 /* hacks-guide change end: add grid cards */
 
