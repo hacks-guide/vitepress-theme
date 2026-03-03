@@ -5,7 +5,6 @@
 
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import SerialChecker from './components/SerialChecker.vue'
 import './style.css'
 
 /* FontAwesome stuff */
@@ -28,7 +27,6 @@ export default {
     app.component('font-awesome-icon', FontAwesomeIcon),
     app.component('Tab', Tab),
     app.component('Tabs', Tabs)
-    app.component('SerialChecker', SerialChecker)
   }
 }
 
