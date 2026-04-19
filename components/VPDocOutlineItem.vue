@@ -1,6 +1,6 @@
 <!--
-  Copyright (c) 2019-2025 Yuxi (Evan) You
-  Copyright (c) 2024-2025 Nintendo Homebrew
+  Copyright (c) 2019-2026 Yuxi (Evan) You
+  Copyright (c) 2024-2026 Nintendo Homebrew
 
   SPDX-License-Identifier: MIT
 -->
@@ -23,7 +23,7 @@ function onClick({ target: el }: Event) {
 <template>
   <ul class="VPDocOutlineItem" :class="root ? 'root' : 'nested'">
     <li v-for="{ children, link, title } in headers">
-      <a class="outline-link" :href="link" @click="onClick" :title>
+      <a class="outline-link" :href="link" :title>
         {{ title }}
       </a>
       <template v-if="children?.length">

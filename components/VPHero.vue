@@ -6,10 +6,20 @@
 -->
 
 <script setup lang="ts">
-import { type Ref, inject } from 'vue'
-import { withBase } from 'vitepress'
+// hacks-guide change start: Expand hero image across the entire screen
+/*
+import type { DefaultTheme } from 'vitepress/theme'
+import { computed, inject } from 'vue'
+import { layoutInfoInjectionKey } from '../composables/layout'
+import VPButton from './VPButton.vue'
+import VPImage from './VPImage.vue'
+*/
+
 import type { DefaultTheme } from 'vitepress/theme'
 import VPButton from 'vitepress/theme'
+
+import { withBase } from 'vitepress'
+// hacks-guide change start: Expand hero image across the entire screen
 
 export interface HeroAction {
   theme?: 'brand' | 'alt'
@@ -27,7 +37,14 @@ defineProps<{
   actions?: HeroAction[]
 }>()
 
-const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
+// hacks-guide change start: Expand hero image across the entire screen
+/*
+const { heroImageSlotExists } = inject(
+  layoutInfoInjectionKey,
+  { heroImageSlotExists: computed(() => false) }
+)
+*/
+// hacks-guide change end: Expand hero image across the entire screen
 </script>
 
 <template>
@@ -51,6 +68,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
         <slot name="home-hero-info-after" />
 
         <div v-if="actions" class="actions">
+          <slot name="home-hero-actions-before-actions" />
           <div v-for="action in actions" :key="action.link" class="action">
             <VPButton
               tag="a"
@@ -171,6 +189,12 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
   font-size: 32px;
   font-weight: 700;
   white-space: pre-wrap;
+
+  &:lang(ja) {
+    font-feature-settings: 'palt';
+    word-break: auto-phrase;
+  }
+
 /* hacks-guide change start: hardcode text and tagline colors */
   color: rgba(255, 255, 245, 0.86);
   filter: drop-shadow(5px 5px 4px var(--vp-c-black));
