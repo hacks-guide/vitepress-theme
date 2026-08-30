@@ -7,7 +7,7 @@
 /* hacks-guide change start: Disable container titles */
 .custom-block {
   /* original: 16px 16px 8px */
-  padding: 8px 16px 8px;
+  padding: 8px 16px 8px !important;
 }
 
 .custom-block-title {
