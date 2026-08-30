@@ -143,17 +143,24 @@ input[type="radio"] {
   }
 
   /* tab/button colors */
-  input:checked + .tab-link:not(:hover):not(:active):not(:focus) {
+  input:checked + .tab-link:not(:active) {
     background-color: var(--vp-c-indigo-2);
     border-color: var(--vp-c-indigo-2);
     color: var(--vp-c-white);
   }
 
   /* hover colors */
-  .tab-link:hover, .tab-link:active, .tab-link:focus {
+  .tab-link:hover {
     background-color: var(--vp-c-indigo-soft);
     border-color: var(--vp-c-indigo-2);
     color: var(--vp-c-indigo-1);
+  }
+
+  /* tab color when active */
+  .tab-link:active {
+  background-color: var(--vp-c-indigo-2);
+    border-color: var(--vp-c-indigo-2);
+    color: var(--vp-c-white);
   }
 }
 /* hacks-guide change end: add tabs */

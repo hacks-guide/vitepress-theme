@@ -29,3 +29,4 @@ export default {
     app.component('Tabs', Tabs)
   }
 }
+
