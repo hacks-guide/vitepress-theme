@@ -258,6 +258,15 @@ input[type="radio"] {
 }
 /* hacks-guide change end: add grid cards */
 
+/* hacks-guide change start: add success container */
+
+.custom-block.success {
+  border-color: transparent;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-success-soft);
+}
+
+/* hacks-guide change end: add success container */
 
 /* hacks-guide change start: add button styles */
 .btn {
